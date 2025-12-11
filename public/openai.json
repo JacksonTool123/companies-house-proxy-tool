@@ -1,0 +1,150 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Companies House UK API",
+    "version": "1.0.0",
+    "description": "Access UK company data from the Companies House API. Includes company profile, officers, registered office, filing history, and charges."
+  },
+  "servers": [
+    {
+      "url": "https://companies-house-proxy-43ur.onrender.com"
+    }
+  ],
+  "paths": {
+    "/GetCompanyByNumber": {
+      "post": {
+        "operationId": "GetCompanyByNumber",
+        "summary": "Get company profile by company number",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyNumber": {
+                    "type": "string"
+                  }
+                },
+                "required": ["companyNumber"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Company profile"
+          }
+        }
+      }
+    },
+    "/GetRegisteredOfficeAddress": {
+      "post": {
+        "operationId": "GetRegisteredOfficeAddress",
+        "summary": "Get registered office address",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyNumber": {
+                    "type": "string"
+                  }
+                },
+                "required": ["companyNumber"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Registered office address"
+          }
+        }
+      }
+    },
+    "/GetCompanyOfficers": {
+      "post": {
+        "operationId": "GetCompanyOfficers",
+        "summary": "Get list of company officers",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyNumber": {
+                    "type": "string"
+                  }
+                },
+                "required": ["companyNumber"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Company officers"
+          }
+        }
+      }
+    },
+    "/GetCompanyFilingList": {
+      "post": {
+        "operationId": "GetCompanyFilingList",
+        "summary": "Get company filing history",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyNumber": {
+                    "type": "string"
+                  }
+                },
+                "required": ["companyNumber"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Filing history"
+          }
+        }
+      }
+    },
+    "/GetCompanyChargeList": {
+      "post": {
+        "operationId": "GetCompanyChargeList",
+        "summary": "Get charges or mortgages",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyNumber": {
+                    "type": "string"
+                  }
+                },
+                "required": ["companyNumber"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Charge list"
+          }
+        }
+      }
+    }
+  }
+}
