@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "api_companieshouse_gov_uk__jit_plugin",
+  "name_for_human": "Companies House UK",
+  "description_for_model": "Retrieve UK company data from Companies House, including profile, officers, filings, charges, and addresses.",
+  "description_for_human": "Search and retrieve official UK company information in real time from Companies House.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://companies-house-proxy-43ur.onrender.com/openapi.json"
+  },
+  "logo_url": "https://companies-house-proxy-43ur.onrender.com/logo.png",
+  "contact_email": "your@email.com",
+  "legal_info_url": "https://companies-house-proxy-43ur.onrender.com/legal"
+}
