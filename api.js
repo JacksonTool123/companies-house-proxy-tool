@@ -19,8 +19,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/.well-known', express.static(path.join(__dirname, '.well-known')));
 
 const CH_API_KEY = process.env.CH_API_KEY;
-console.log('✅ Loaded CH_API_KEY:', CH_API_KEY); // <-- Check if .env is working
-
 const baseURL = 'https://api.company-information.service.gov.uk';
 
 const getAuthHeader = () => {
@@ -37,7 +35,8 @@ const handleProxy = async (req, res, endpointPath) => {
 
   try {
     const url = `${baseURL}${endpointPath.replace('{companyNumber}', companyNumber)}`;
-    console.log('🔁 Sending request to:', url);
+
+    // ✅ This line logs your auth header so we can verify it
     console.log('🔐 Auth Header:', getAuthHeader());
 
     const response = await fetch(url, {
